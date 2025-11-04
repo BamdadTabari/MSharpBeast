@@ -6,6 +6,7 @@ namespace Domain
     {
         public Contact()
         {
+            Associate<Category>("Category").Mandatory();
             String("First name").Mandatory();
             String("Last name").Mandatory();
             String("Name").Calculated().Getter("FirstName + \" \" + LastName");
