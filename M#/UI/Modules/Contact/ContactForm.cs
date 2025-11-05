@@ -14,6 +14,8 @@ namespace Modules
 
             Field(x => x.PhoneNumber).Control(ControlType.Textbox);
 
+            Field(x => x.Email).Control(ControlType.Textbox);
+
             Button("Cancel").CausesValidation(false)
                 .OnClick(x => x.CloseModal());
 

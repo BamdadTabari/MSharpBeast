@@ -15,7 +15,7 @@
     public partial class Category : GuidEntity
     {
         /// <summary>Initializes a new instance of the Category class.</summary>
-        public Category() => Deleting += (ev) => ev.Do(Cascade_Deleting); 
+        public Category() => Deleting += (ev) => ev.Do(Cascade_Deleting);
         
         /// <summary>Gets or sets the value of Name on this Category instance.</summary>
         [System.ComponentModel.DataAnnotations.StringLength(200)]

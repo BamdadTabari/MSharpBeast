@@ -11,6 +11,7 @@ namespace Domain
             String("Last name").Mandatory();
             String("Name").Calculated().Getter("FirstName + \" \" + LastName");
             String("Phone number").Mandatory();
+            String("Email").Accepts(TextPattern.EmailAddress);
         }
     }
 }

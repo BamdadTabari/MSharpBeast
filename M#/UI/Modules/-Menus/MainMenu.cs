@@ -22,6 +22,20 @@ namespace Modules
                      x.CSharp("await OAuth.Instance.LogOff();");
                      x.Go<LoginPage>();
                  });
+
+            Item("Login")
+                .Icon(FA.UnlockAlt)
+                .VisibleIf(AppRole.Anonymous)
+                .OnClick(x => x.Go<LoginPage>());
+
+            Item("Settings")
+                .VisibleIf(AppRole.Admin)
+                .Icon(FA.Cog)
+               .OnClick(x => x.Go<Admin.SettingsPage>());
+
+            Item("Contacts")
+                .Icon(FA.Cog)
+                .OnClick(x => x.Go<ContactPage>());
         }
     }
 }

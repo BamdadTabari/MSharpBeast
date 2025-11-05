@@ -22,6 +22,29 @@ namespace Domain
 
             await CreateAdmins();
             await CreateContacts();
+            await CreateCategory();
+        }
+
+        async Task CreateCategory()
+        {
+
+            await Create(new Category
+            {
+                Name = "Family"
+            });
+            await Create(new Category
+            {
+                Name = "Friends"
+            });
+            await Create(new Category
+            {
+                Name = "Business"
+            });
+            await Create(new Category
+            {
+                Name = "Other"
+            });
+
         }
 
         async Task CreateAdmins()

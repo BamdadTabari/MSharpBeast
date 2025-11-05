@@ -2,7 +2,7 @@
 
 namespace Blog
 {
-    public class BlogPage : SubPage<BlogPage>
+    public class BlogPage : SubPage<Root.BlogPage>
     {
         public BlogPage()
         {

@@ -16,6 +16,10 @@
     {
         CachedReference<Category> cachedCategory = new CachedReference<Category>();
         
+        /// <summary>Gets or sets the value of Email on this Contact instance.</summary>
+        [System.ComponentModel.DataAnnotations.StringLength(200)]
+        public string Email { get; set; }
+        
         /// <summary>Gets or sets the value of FirstName on this Contact instance.</summary>
         [System.ComponentModel.DataAnnotations.StringLength(200)]
         public string FirstName { get; set; }
@@ -64,6 +68,14 @@
             
             if (CategoryId == null)
                 result.Add("Please provide a value for Category.");
+            
+            if (Email?.Length > 200)
+                result.Add("The provided Email is too long. A maximum of 200 characters is acceptable.");
+            
+            // Ensure Email matches Email address pattern:
+            
+            if (Email.HasValue() && !System.Text.RegularExpressions.Regex.IsMatch(Email, "\\s*\\w+([-+.'\\w])*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*\\s*"))
+                result.Add("The provided Email is not a valid Email address.");
             
             if (FirstName.IsEmpty())
                 result.Add("First name cannot be empty.");

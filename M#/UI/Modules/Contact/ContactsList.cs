@@ -18,13 +18,15 @@ namespace Modules
 
             SearchButton("Search").OnClick(x => x.Reload());
 
-            ButtonColumn("c#:item.Name")
-                .Style(ButtonStyle.Link)
-                .HeaderText("Name")
-                .OnClick(x => x.Go<Contact.ViewPage>()
-                .Send("item", "item.ID"));
+            //ButtonColumn("c#:item.Name")
+            //    .Style(ButtonStyle.Link)
+            //    .HeaderText("Name")
+            //    .OnClick(x => x.Go<Contact.ViewPage>()
+            //    .Send("item", "item.ID"));
 
+            Column(x => x.Name);
             Column(x => x.PhoneNumber);
+            Column(x => x.Email);
 
             ButtonColumn("Edit")
                 .HeaderText("Actions")
